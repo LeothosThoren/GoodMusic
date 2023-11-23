@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.GoodMusic" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.GoodMusic.Splash" parent="Theme.GoodMusic">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splashscreen_24</item>
+        <item name="postSplashScreenTheme">@style/Theme.GoodMusic</item>
+    </style>
+</resources>
