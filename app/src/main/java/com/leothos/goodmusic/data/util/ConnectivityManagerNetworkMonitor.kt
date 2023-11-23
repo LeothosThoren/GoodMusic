@@ -23,6 +23,7 @@ import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
 import android.net.NetworkRequest.Builder
+import android.os.Build
 import androidx.core.content.getSystemService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.channels.awaitClose
@@ -76,7 +77,13 @@ class ConnectivityManagerNetworkMonitor @Inject constructor(
         }
     }.conflate()
 
-    private fun ConnectivityManager.isCurrentlyConnected() = activeNetwork
-        ?.let(::getNetworkCapabilities)
-        ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) ?: false
+    @Suppress("DEPRECATION")
+    private fun ConnectivityManager.isCurrentlyConnected() = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ->
+            activeNetwork
+                ?.let(::getNetworkCapabilities)
+                ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+
+        else -> activeNetworkInfo?.isConnected
+    } ?: false
 }

@@ -7,8 +7,10 @@ import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.leothos.goodmusic.data.util.NetworkMonitor
+import com.leothos.goodmusic.navigation.TopLevelDestination
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -44,6 +46,11 @@ class GoodMusicAppState(
     val navController: NavHostController
 ) {
 
+    val currentDestination
+        @Composable get() = navController
+            .currentBackStackEntryAsState().value?.destination?.route
+            ?: TopLevelDestination.ALBUM_ROUTE.name
+
     val isExpandedScreen: Boolean
         get() = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
@@ -54,4 +61,6 @@ class GoodMusicAppState(
             started = SharingStarted.WhileSubscribed(5_000),
             initialValue = false,
         )
+
+    val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.values().toList()
 }

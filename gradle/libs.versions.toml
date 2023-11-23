@@ -14,10 +14,12 @@ ksp = "1.8.21-1.0.11"
 m3WindowSizeClass = "1.1.2"
 mockk = "1.13.7"
 moshi = "1.14.0"
+navigationTesting = "2.7.5"
 okhttpBom = "4.10.0"
 retrofit = "2.9.0"
 room = "2.5.2"
 splashscreen = "1.0.1"
+
 
 
 [libraries]
@@ -31,6 +33,7 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 io-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationTesting" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose" }
 androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "m3WindowSizeClass" }

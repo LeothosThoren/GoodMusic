@@ -90,6 +90,7 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.navigation.testing)
     androidTestImplementation(libs.androidx.junit)
     testImplementation(libs.io.mockk)
     androidTestImplementation(platform(libs.androidx.compose.bom))

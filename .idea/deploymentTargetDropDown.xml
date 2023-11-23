@@ -2,7 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="GoodMusicAppStateTest">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="appState_currentDestination()">
+        <State />
+      </entry>
+      <entry key="appState_destinations()">
         <State />
       </entry>
     </value>
