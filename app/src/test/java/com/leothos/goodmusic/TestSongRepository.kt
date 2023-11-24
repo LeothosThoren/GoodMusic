@@ -1,25 +1,26 @@
 package com.leothos.goodmusic
 
+import com.leothos.goodmusic.data.database.entity.SongEntity
 import com.leothos.goodmusic.data.repository.SongRepository
-import com.leothos.goodmusic.model.Song
 
 class TestSongRepository : SongRepository {
 
     private val songs = populateSongs()
-    override suspend fun getSongs(): List<Song> {
+    override suspend fun getSongs(): List<SongEntity> {
         return songs.sortedBy { it.albumId }
     }
 
-    private fun populateSongs(): List<Song> {
-        val songs: MutableList<Song> = mutableListOf()
+    private fun populateSongs(): List<SongEntity> {
+        val songs: MutableList<SongEntity> = mutableListOf()
         repeat(50) {
             songs.add(
-                Song(
+                SongEntity(
                     albumId = it % 2,
                     id = it,
                     title = "title$it",
-                    url = "https://via.placeholder.com/600/f66b97",
-                    thumbnailUrl = "https://via.placeholder.com/600/f66b97"
+                    pictureUrl = "https://via.placeholder.com/600/f66b97",
+                    thumbnailUrl = "https://via.placeholder.com/600/f66b97",
+                    isFavorite = false
                 )
             )
         }

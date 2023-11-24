@@ -1,4 +1,4 @@
-package com.thoren.cresus.data.network.di
+package com.leothos.goodmusic.data.network.di
 
 import dagger.Module
 import dagger.Provides
