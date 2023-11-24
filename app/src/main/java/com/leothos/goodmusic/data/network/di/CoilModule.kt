@@ -1,8 +1,7 @@
-package com.leothos.goodmusic.data.di
+package com.leothos.goodmusic.data.network.di
 
 import android.content.Context
 import coil.ImageLoader
-import com.leothos.goodmusic.R
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,6 +19,5 @@ object NetworkModule {
         @ApplicationContext application: Context,
     ): ImageLoader = ImageLoader.Builder(application)
         .crossfade(true)
-        .placeholder(R.drawable.ic_launcher_foreground)
         .build()
 }

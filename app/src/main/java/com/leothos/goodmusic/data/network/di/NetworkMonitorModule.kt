@@ -1,4 +1,4 @@
-package com.leothos.goodmusic.data.di
+package com.leothos.goodmusic.data.network.di
 
 import com.leothos.goodmusic.data.util.ConnectivityManagerNetworkMonitor
 import com.leothos.goodmusic.data.util.NetworkMonitor
