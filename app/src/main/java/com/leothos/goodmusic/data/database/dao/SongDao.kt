@@ -8,8 +8,18 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SongDao {
+
     @Upsert
-    suspend fun insertOrUpdateSongEntities(songs: List<SongEntity>)
+    suspend fun upsertSongEntities(songs: List<SongEntity>)
+
+    @Query("UPDATE song_entity SET isFavorite=:isFavorite WHERE id=:id")
+    suspend fun setOrUnsetSongEntityToFavorite(id: Int, isFavorite: Boolean)
+
+    @Query("UPDATE song_entity SET isFavorite=:isFavorite WHERE albumId=:albumId")
+    suspend fun setOrUnsetSongsEntityToFavorite(albumId: Int, isFavorite: Boolean)
+
+    @Query("SELECT * FROM song_entity")
+    fun getSongEntities(): Flow<List<SongEntity>>
 
     @Query("SELECT * FROM song_entity WHERE albumId = :albumId")
     fun getSongEntitiesFromAlbumId(albumId: Int): Flow<List<SongEntity>>

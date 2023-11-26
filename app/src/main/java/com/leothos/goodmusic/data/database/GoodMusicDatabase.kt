@@ -7,7 +7,8 @@ import com.leothos.goodmusic.data.database.entity.SongEntity
 
 @Database(
     entities = [SongEntity::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class GoodMusicDatabase : RoomDatabase() {
 

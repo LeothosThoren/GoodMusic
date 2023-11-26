@@ -55,6 +55,7 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
     implementation(libs.androidx.core.splashscreen)
 
     // Compose
@@ -92,7 +93,6 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.navigation.testing)
     androidTestImplementation(libs.androidx.junit)
-    testImplementation(libs.io.mockk)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
