@@ -1,4 +1,4 @@
-package com.leothos.goodmusic.feature.favorite
+package com.leothos.goodmusic.feature.favoritesong
 
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder

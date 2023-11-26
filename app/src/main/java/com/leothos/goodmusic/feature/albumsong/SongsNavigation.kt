@@ -1,12 +1,17 @@
-package com.leothos.goodmusic.feature.song
+package com.leothos.goodmusic.feature.albumsong
 
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 
 private const val albumIdArg = "albumId"
-const val SONGS_ROUTE = "albumSongs_route"
+private const val SONGS_ROUTE = "albumSongs_route"
+
+fun NavHostController.navigateToSongs(albumId: Int) {
+    this.navigate(route = "$SONGS_ROUTE/$albumId")
+}
 
 fun NavGraphBuilder.songsScreen(
     onBackClick: () -> Unit
@@ -24,5 +29,4 @@ fun NavGraphBuilder.songsScreen(
             onBackClick()
         }
     }
-
 }

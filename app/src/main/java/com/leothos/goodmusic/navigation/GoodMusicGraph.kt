@@ -4,12 +4,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.leothos.goodmusic.feature.album.ALBUM_ROUTE_GRAPH
 import com.leothos.goodmusic.feature.album.albumGraph
-import com.leothos.goodmusic.feature.favorite.favoriteScreen
-import com.leothos.goodmusic.feature.song.SONGS_ROUTE
-import com.leothos.goodmusic.feature.song.songsScreen
+import com.leothos.goodmusic.feature.albumsong.navigateToSongs
+import com.leothos.goodmusic.feature.albumsong.songsScreen
+import com.leothos.goodmusic.feature.favoritesong.favoriteScreen
 
+
+private const val ALBUM_ROUTE_GRAPH = "AlbumRouteGraph"
 
 @Composable
 fun GoodMusicNavGraph(
@@ -23,9 +24,10 @@ fun GoodMusicNavGraph(
     ) {
 
         albumGraph(
-            startDestination = ALBUM_ROUTE_GRAPH,
+            graphRoute = ALBUM_ROUTE_GRAPH,
+            destination = TopLevelDestination.ALBUM_ROUTE.name,
             onAlbumClick = { albumId ->
-                navHostController.navigate(route = "$SONGS_ROUTE/$albumId")
+                navHostController.navigateToSongs(albumId)
             }) {
             songsScreen {
                 navHostController.popBackStack()

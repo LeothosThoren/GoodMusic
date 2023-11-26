@@ -21,11 +21,11 @@ import com.leothos.goodmusic.model.Album
 fun AlbumListScreen(
     albums: List<Album>,
     lazyGridState: LazyGridState,
-    onAlbumClick: (String) -> Unit
+    onAlbumClick: (Int) -> Unit
 ) {
     LazyVerticalGrid(columns = GridCells.Adaptive(150.dp), state = lazyGridState) {
         items(items = albums, key = { album -> album.albumId }) {
-            AlbumItem(url = it.pictureUrl, albumId = it.albumId.toString()) { albumId ->
+            AlbumItem(url = it.pictureUrl, albumId = it.albumId) { albumId ->
                 onAlbumClick(albumId)
             }
         }
@@ -34,7 +34,7 @@ fun AlbumListScreen(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun AlbumItem(url: String, albumId: String, onAlbumClick: (String) -> Unit) {
+private fun AlbumItem(url: String, albumId: Int, onAlbumClick: (Int) -> Unit) {
     Card(onClick = { onAlbumClick(albumId) }) {
         Column(
             modifier = Modifier.fillMaxWidth(),

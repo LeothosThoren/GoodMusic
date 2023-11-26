@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.leothos.goodmusic.data.mapper.toSong
 import com.leothos.goodmusic.data.repository.SongRepository
 import com.leothos.goodmusic.domain.GetAlbumFromSongsUseCase
+import com.leothos.goodmusic.domain.SetSongAsFavoriteUseCase
 import com.leothos.goodmusic.model.Album
 import com.leothos.goodmusic.model.Song
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,7 +20,8 @@ import javax.inject.Inject
 @HiltViewModel
 class AlbumViewModel @Inject constructor(
     private val songRepository: SongRepository,
-    private val getAlbum: GetAlbumFromSongsUseCase
+    private val getAlbum: GetAlbumFromSongsUseCase,
+    private val setSongAsFavorite: SetSongAsFavoriteUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(AlbumUiState())
@@ -43,7 +45,7 @@ class AlbumViewModel @Inject constructor(
                 }
                 getAlbum.invoke().collectLatest { albums ->
                     _uiState.update {
-                        it.copy(albums = albums)
+                        it.copy(albums = albums, isEmpty = albums.isEmpty())
                     }
                 }
             } catch (t: Throwable) {
@@ -77,7 +79,7 @@ class AlbumViewModel @Inject constructor(
 
     fun markSongAsFavorite(id: Int, isFavorite: Boolean) {
         viewModelScope.launch {
-            songRepository.markSongAsFavorite(id, isFavorite)
+            setSongAsFavorite.invoke(id, isFavorite)
         }
     }
 }

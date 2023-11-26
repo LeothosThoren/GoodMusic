@@ -8,7 +8,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 @Composable
 fun AlbumRoute(
     viewModel: AlbumViewModel = hiltViewModel(),
-    onAlbumClick: (String) -> Unit
+    onAlbumClick: (Int) -> Unit
 ) {
     viewModel.getAlbumsFromSongs()
     val uiState = viewModel.uiState.collectAsStateWithLifecycle()
