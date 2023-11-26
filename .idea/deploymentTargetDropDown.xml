@@ -2,7 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="GoodMusicAppStateTest">
+      <entry key="SongDaoTest">
         <State />
       </entry>
       <entry key="app">
@@ -18,13 +18,19 @@
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2023-11-24T13:49:20.635681800Z" />
+          <timeTargetWasSelectedWithDropDown value="2023-11-25T19:01:10.116399400Z" />
         </State>
       </entry>
-      <entry key="appState_currentDestination()">
+      <entry key="songDao_delete_all_song_entities_from_database()">
         <State />
       </entry>
-      <entry key="appState_destinations()">
+      <entry key="songDao_get_song_entities_from_album_id()">
+        <State />
+      </entry>
+      <entry key="songDao_insert_or_update_songs_from_different_albums()">
+        <State />
+      </entry>
+      <entry key="songDao_set_album_to_favorite()">
         <State />
       </entry>
     </value>

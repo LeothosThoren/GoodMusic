@@ -4,22 +4,34 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
+import com.leothos.goodmusic.feature.album.ALBUM_ROUTE_GRAPH
+import com.leothos.goodmusic.feature.album.albumGraph
+import com.leothos.goodmusic.feature.favorite.favoriteScreen
+import com.leothos.goodmusic.feature.song.SONGS_ROUTE
+import com.leothos.goodmusic.feature.song.songsScreen
 
-
-private const val ALBUM_ROUTE_GRAPH = "AlbumRouteGraph"
 
 @Composable
 fun GoodMusicNavGraph(
     modifier: Modifier = Modifier,
-    navHostController: NavHostController,
-    startDestination: String = ALBUM_ROUTE_GRAPH
+    navHostController: NavHostController
 ) {
     NavHost(
         navController = navHostController,
-        startDestination = startDestination,
+        startDestination = ALBUM_ROUTE_GRAPH,
         modifier = modifier
     ) {
-        composable(route = startDestination) {}
+
+        albumGraph(
+            startDestination = ALBUM_ROUTE_GRAPH,
+            onAlbumClick = { albumId ->
+                navHostController.navigate(route = "$SONGS_ROUTE/$albumId")
+            }) {
+            songsScreen {
+                navHostController.popBackStack()
+            }
+        }
+
+        favoriteScreen()
     }
 }

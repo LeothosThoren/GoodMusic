@@ -1,9 +1,8 @@
-package com.leothos.goodmusic.data.localDatasource
+package com.leothos.goodmusic.data.database
 
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
-import com.leothos.goodmusic.data.database.GoodMusicDatabase
 import com.leothos.goodmusic.data.database.dao.SongDao
 import com.leothos.goodmusic.data.database.entity.SongEntity
 import kotlinx.coroutines.flow.first
