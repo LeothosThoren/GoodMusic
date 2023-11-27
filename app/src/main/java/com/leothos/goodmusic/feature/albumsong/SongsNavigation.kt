@@ -14,6 +14,7 @@ fun NavHostController.navigateToSongs(albumId: Int) {
 }
 
 fun NavGraphBuilder.songsScreen(
+    isExpandedScreen: Boolean,
     onBackClick: () -> Unit
 ) {
     composable(
@@ -24,7 +25,8 @@ fun NavGraphBuilder.songsScreen(
         val albumId = backstackEntry.arguments?.getString(albumIdArg)!!
 
         SongListScreen(
-            albumId = albumId
+            albumId = albumId,
+            isExpandedScreen = isExpandedScreen
         ) {
             onBackClick()
         }

@@ -15,6 +15,7 @@ private const val ALBUM_ROUTE_GRAPH = "AlbumRouteGraph"
 @Composable
 fun GoodMusicNavGraph(
     modifier: Modifier = Modifier,
+    isExpandedScreen: Boolean,
     navHostController: NavHostController
 ) {
     NavHost(
@@ -29,11 +30,11 @@ fun GoodMusicNavGraph(
             onAlbumClick = { albumId ->
                 navHostController.navigateToSongs(albumId)
             }) {
-            songsScreen {
+            songsScreen(isExpandedScreen = isExpandedScreen) {
                 navHostController.popBackStack()
             }
         }
 
-        favoriteScreen()
+        favoriteScreen(isExpandedScreen = isExpandedScreen)
     }
 }

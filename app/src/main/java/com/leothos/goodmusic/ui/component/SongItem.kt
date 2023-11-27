@@ -14,24 +14,23 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.leothos.goodmusic.R
 
 @Composable
 fun SongItem(
@@ -41,10 +40,20 @@ fun SongItem(
     isFavorite: Boolean,
     onFavoriteButtonClick: (Int, Boolean) -> Unit
 ) {
-    var checked by remember { mutableStateOf(isFavorite) }
-
-    ElevatedCard {
+    ElevatedCard(
+        Modifier.padding(16.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onTertiary)
+    ) {
         val roundShape = RoundedCornerShape(100)
+
+        Row(Modifier.padding(16.dp)) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleLarge,
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 2
+            )
+        }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -54,8 +63,7 @@ fun SongItem(
         ) {
             Box(
                 modifier = Modifier
-                    .padding(16.dp)
-                    .size(54.dp)
+                    .size(64.dp)
                     .background(
                         color = MaterialTheme.colorScheme.surfaceVariant,
                         shape = roundShape
@@ -75,25 +83,23 @@ fun SongItem(
                     contentDescription = null
                 )
             }
-            Text(
-                text = title,
-                style = MaterialTheme.typography.titleLarge,
-                overflow = TextOverflow.Ellipsis
-            )
-            IconToggleButton(checked = checked, onCheckedChange = {
-                checked = it
-                onFavoriteButtonClick(id, checked)
-            }) {
+            IconToggleButton(
+                checked = isFavorite,
+                onCheckedChange = {
+                    onFavoriteButtonClick(id, it)
+                }) {
                 Icon(
                     modifier = Modifier.size(36.dp),
                     imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Outlined.FavoriteBorder,
-                    contentDescription = "cd_favorite_button",
+                    contentDescription = stringResource(R.string.cd_favorite_button),
                     tint = MaterialTheme.colorScheme.primary
                 )
             }
         }
+
     }
 }
+
 
 @Preview
 @Composable

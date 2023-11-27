@@ -3,4 +3,7 @@
     <string name="album">Album</string>
     <string name="favorite">Favorite</string>
     <string name="no_internet">⚠️ You aren’t connected to the internet</string>
+    <string name="cd_favorite_button">cd_favorite_button</string>
+    <string name="favorite_songs">Favorite songs</string>
+    <string name="albums">Albums</string>
 </resources>

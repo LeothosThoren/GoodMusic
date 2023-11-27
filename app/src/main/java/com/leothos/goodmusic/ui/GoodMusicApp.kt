@@ -99,6 +99,7 @@ fun GoodMusicApp(
                 }
 
                 GoodMusicNavGraph(
+                    isExpandedScreen = appState.isExpandedScreen,
                     navHostController = appState.navController
                 )
             }

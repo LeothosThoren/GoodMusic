@@ -5,8 +5,11 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.leothos.goodmusic.navigation.TopLevelDestination
 
-fun NavGraphBuilder.favoriteScreen() {
+fun NavGraphBuilder.favoriteScreen(isExpandedScreen: Boolean) {
     composable(route = TopLevelDestination.FAVORITE_ROUTE.name) {
-        FavoriteRoute(viewModel = hiltViewModel())
+        FavoriteRoute(
+            viewModel = hiltViewModel(),
+            isExpandedScreen = isExpandedScreen
+        )
     }
 }

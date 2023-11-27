@@ -13,24 +13,21 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\nasta\.android\avd\Medium_Tablet_API_21.avd" />
+                  <value value="C:\Users\nasta\.android\avd\Pixel_Fold_API_TiramisuPrivacySandbox.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2023-11-26T19:34:33.326704700Z" />
+          <timeTargetWasSelectedWithDropDown value="2023-11-26T20:49:26.651599400Z" />
         </State>
       </entry>
       <entry key="songDao_delete_all_song_entities_from_database()">
         <State />
       </entry>
-      <entry key="songDao_get_song_entities_from_album_id()">
-        <State />
-      </entry>
       <entry key="songDao_insert_or_update_songs_from_different_albums()">
         <State />
       </entry>
-      <entry key="songDao_set_album_to_favorite()">
+      <entry key="songDao_set_song_entities_to_favorite()">
         <State />
       </entry>
     </value>
