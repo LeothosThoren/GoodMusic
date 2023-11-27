@@ -18,9 +18,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.leothos.goodmusic.R
 import com.leothos.goodmusic.model.Album
 
 @Composable
@@ -74,7 +76,7 @@ private fun AlbumItem(
             modifier = Modifier
                 .padding(2.dp)
                 .background(MaterialTheme.colorScheme.background),
-            text = "Album: $albumId",
+            text = stringResource(R.string.album_quantity, albumId),
             style = MaterialTheme.typography.headlineSmall
         )
     }

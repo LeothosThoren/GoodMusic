@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GoodMusic</string>
+    <string name="album">Album</string>
+    <string name="favorite">Favori</string>
+    <string name="no_internet">⚠️ Vous n\'êtes pas connecté à internet</string>
+    <string name="favorite_songs">Chansons favorites</string>
+    <string name="albums">Albums</string>
+    <string name="add_some_song_to_your_favorites_they_will_be_displayed_here">Ajoutez des chansons aux favoris, elles seront affichées ici :)</string>
+    <string name="there_is_nothing_right_now">C\'est bien vide par ici</string>
+    <string name="album_quantity">Album %1$s</string>
+</resources>

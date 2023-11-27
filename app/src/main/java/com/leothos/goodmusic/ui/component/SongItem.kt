@@ -51,7 +51,7 @@ fun SongItem(
                 text = title,
                 style = MaterialTheme.typography.titleLarge,
                 overflow = TextOverflow.Ellipsis,
-                maxLines = 2
+                maxLines = 1
             )
         }
         Row(

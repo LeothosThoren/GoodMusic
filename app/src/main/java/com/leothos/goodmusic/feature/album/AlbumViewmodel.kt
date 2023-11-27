@@ -39,22 +39,17 @@ class AlbumViewModel @Inject constructor(
 
     fun getAlbumsFromSongs() {
         viewModelScope.launch {
-            try {
-                _uiState.update {
-                    it.copy(isLoading = true)
-                }
-                getAlbum.invoke().collectLatest { albums ->
-                    _uiState.update {
-                        it.copy(albums = albums, isEmpty = albums.isEmpty())
-                    }
-                }
-            } catch (t: Throwable) {
+            _uiState.update {
+                it.copy(isLoading = true)
+            }
+            getAlbum.invoke()
+                .catch { t ->
                 _uiState.update {
                     it.copy(errorMessage = t.message)
                 }
-            } finally {
+                }.collectLatest { albums ->
                 _uiState.update {
-                    it.copy(isLoading = false)
+                    it.copy(albums = albums, isLoading = false)
                 }
             }
         }
@@ -86,7 +81,6 @@ class AlbumViewModel @Inject constructor(
 
 data class AlbumUiState(
     val isLoading: Boolean = false,
-    val isEmpty: Boolean = false,
     val errorMessage: String? = null,
     val albums: List<Album> = emptyList(),
     val songs: List<Song> = emptyList()

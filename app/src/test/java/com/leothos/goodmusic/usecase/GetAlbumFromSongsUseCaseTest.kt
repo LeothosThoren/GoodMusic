@@ -3,11 +3,19 @@
 package com.leothos.goodmusic.usecase
 
 import com.leothos.goodmusic.MainDispatcherRule
-import com.leothos.goodmusic.data.repository.TestSongRepository
+import com.leothos.goodmusic.data.mapper.toAlbum
+import com.leothos.goodmusic.data.repository.SongRepository
+import com.leothos.goodmusic.data.repository.SongRepositoryTest.FakeData
 import com.leothos.goodmusic.domain.GetAlbumFromSongsUseCase
-import com.leothos.goodmusic.model.Album
+import io.mockk.MockKAnnotations
+import io.mockk.every
+import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -17,21 +25,29 @@ class GetAlbumFromSongsUseCaseTest {
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
-    private val songRepository = TestSongRepository()
+    @MockK
+    private lateinit var songRepository: SongRepository
 
-    val useCase = GetAlbumFromSongsUseCase(songRepository)
+    @MockK
+    private lateinit var useCase: GetAlbumFromSongsUseCase
 
-    @Test
-    fun albumSongUseCase_albumsAreReturned() = runTest {
-        val albums = useCase()
 
-        songRepository.getSongs()
-
-        //Assert.assertEquals()
+    @Before
+    fun setUp() {
+        MockKAnnotations.init(this)
+        useCase = GetAlbumFromSongsUseCase(songRepository)
     }
 
-    private val testAlbums = listOf(
-        Album(0, "https://via.placeholder.com/600/f66b97"),
-        Album(1, "https://via.placeholder.com/600/f66b97")
-    )
+    @Test
+    fun albumSongUseCase_whenSongEntitiesAreGiven_thenAlbumsAreReturned() = runTest {
+        val songEntities = FakeData.generateFakeSongEntity()
+        every { songRepository.getSongs() } returns flowOf(songEntities)
+
+        val result = useCase.invoke().first()
+
+        Assert.assertEquals(
+            result.first(),
+            songEntities.first().toAlbum()
+        )
+    }
 }

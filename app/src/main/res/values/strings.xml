@@ -3,7 +3,10 @@
     <string name="album">Album</string>
     <string name="favorite">Favorite</string>
     <string name="no_internet">⚠️ You aren’t connected to the internet</string>
-    <string name="cd_favorite_button">cd_favorite_button</string>
+    <string name="cd_favorite_button" translatable="false">cd_favorite_button</string>
     <string name="favorite_songs">Favorite songs</string>
     <string name="albums">Albums</string>
+    <string name="add_some_song_to_your_favorites_they_will_be_displayed_here">Add some song to your favorites, they will be displayed here :)</string>
+    <string name="there_is_nothing_right_now">There is nothing right now</string>
+    <string name="album_quantity">Album %1$s</string>
 </resources>

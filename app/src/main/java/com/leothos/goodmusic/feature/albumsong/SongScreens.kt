@@ -20,9 +20,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.leothos.goodmusic.R
 import com.leothos.goodmusic.feature.album.AlbumViewModel
 import com.leothos.goodmusic.ui.component.SongItem
 
@@ -44,7 +46,7 @@ fun SongListScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Album $albumId",
+                        text = stringResource(R.string.album_quantity, albumId),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         style = MaterialTheme.typography.headlineSmall

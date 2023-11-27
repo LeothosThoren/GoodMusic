@@ -13,10 +13,7 @@ interface SongDao {
     suspend fun upsertSongEntities(songs: List<SongEntity>)
 
     @Query("UPDATE song_entity SET isFavorite=:isFavorite WHERE id=:id")
-    suspend fun setOrUnsetSongEntityToFavorite(id: Int, isFavorite: Boolean)
-
-    @Query("UPDATE song_entity SET isFavorite=:isFavorite WHERE albumId=:albumId")
-    suspend fun setOrUnsetSongsEntityToFavorite(albumId: Int, isFavorite: Boolean)
+    suspend fun setOrUnsetSongEntityToFavorite(id: Int, isFavorite: Boolean): Int
 
     @Query("SELECT * FROM song_entity")
     fun getSongEntities(): Flow<List<SongEntity>>

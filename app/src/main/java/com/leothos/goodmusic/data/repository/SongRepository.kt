@@ -9,7 +9,6 @@ interface SongRepository {
 
     suspend fun markSongAsFavorite(id: Int, isFavorite: Boolean)
 
-    suspend fun markSongsAsFavorite(albumId: Int, isFavorite: Boolean)
 
     fun getSongs(): Flow<List<SongEntity>>
 

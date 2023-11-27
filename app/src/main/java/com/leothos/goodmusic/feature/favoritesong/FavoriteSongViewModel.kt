@@ -51,7 +51,6 @@ class FavoriteSongViewModel @Inject constructor(
 data class FavoriteSongUiState(
     val favoriteSongs: Map<Int, List<Song>> = emptyMap(),
     val isEmpty: Boolean = false,
-    val errorMessage: String? = null,
-    val favoriteSongTitles: List<String> = emptyList()
+    val errorMessage: String? = null
 )
 

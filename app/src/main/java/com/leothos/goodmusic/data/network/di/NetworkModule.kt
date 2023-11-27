@@ -1,5 +1,6 @@
 package com.leothos.goodmusic.data.network.di
 
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,6 +13,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
+    @Singleton
+    @Provides
+    fun provideMoshi(): Moshi =
+        Moshi.Builder().build()
 
     @Singleton
     @Provides

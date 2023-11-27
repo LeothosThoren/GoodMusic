@@ -1,10 +1,10 @@
 package com.leothos.goodmusic.navigation
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.rounded.Favorite
-import androidx.compose.material.icons.rounded.Home
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -17,7 +17,7 @@ enum class TopLevelDestination(
     val titleTextId: Int,
 ) {
     ALBUM_ROUTE(
-        selectedIcon = Icons.Rounded.Home,
+        selectedIcon = Icons.Default.Home,
         unselectedIcon = Icons.Outlined.Home,
         titleTextId = R.string.album,
     ),

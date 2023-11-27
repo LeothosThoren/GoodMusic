@@ -30,10 +30,6 @@ class SongRepositoryImpl @Inject constructor(
         songDao.setOrUnsetSongEntityToFavorite(id, isFavorite)
     }
 
-    override suspend fun markSongsAsFavorite(albumId: Int, isFavorite: Boolean) {
-        songDao.setOrUnsetSongsEntityToFavorite(albumId, isFavorite)
-    }
-
     override fun getSongs(): Flow<List<SongEntity>> {
         return songDao.getSongEntities()
     }

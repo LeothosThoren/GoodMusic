@@ -52,22 +52,18 @@ class SongDaoTest {
         assertTrue(favoriteSongs.first().isEmpty())
 
         songDao.setOrUnsetSongEntityToFavorite(1, true)
+        songDao.setOrUnsetSongEntityToFavorite(2, true)
+        songDao.setOrUnsetSongEntityToFavorite(3, true)
 
         assertTrue(favoriteSongs.first().isNotEmpty())
-    }
+        assertTrue(favoriteSongs.first().first().isFavorite)
 
-    @Test
-    fun songDao_set_album_to_favorite() = runTest {
-        songDao.upsertSongEntities(songEntities)
-        val favoriteSongs = songDao.getFavoriteSongEntities()
+        songDao.setOrUnsetSongEntityToFavorite(1, false)
+        songDao.setOrUnsetSongEntityToFavorite(2, false)
+        songDao.setOrUnsetSongEntityToFavorite(3, false)
 
-        // There si no favorite yet
         assertTrue(favoriteSongs.first().isEmpty())
 
-        songDao.setOrUnsetSongsEntityToFavorite(2, true)
-
-        assertTrue(favoriteSongs.first().isNotEmpty())
-        assertTrue(favoriteSongs.first().size == 2)
     }
 
     @Test
