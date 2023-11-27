@@ -15,14 +15,14 @@ It is also possible to put songs into favorite and to retrieve them.
 
 ## Screenshots
 
-<img src="screenshots/tablet_albums_landscape.png" alt="Screenshot">
-<img src="screenshots/tablet_albums_portrait.png" alt="Screenshot">
-<img src="screenshots/tablet_songs_landscape.png" alt="Screenshot">
-<img src="screenshots/tablet_songs_portrait.png" alt="Screenshot">
-<img src="screenshots/tablet_favorite_songs_landscape.png" alt="Screenshot">
-<img src="screenshots/tablet_favorite_songs_portrait.png" alt="Screenshot">
-<img src="screenshots/tablet_empty_screen_landscape.png" alt="Screenshot">
-<img src="screenshots/offline.png" alt="Screenshot">
+<img src="screenshots/tablet_albums_landscape.png" alt="Screenshot" width="500" height="300">
+<img src="screenshots/tablet_albums_portrait.png" alt="Screenshot" width="300" height="600">
+<img src="screenshots/tablet_songs_landscape.png" alt="Screenshot" width="500" height="300">
+<img src="screenshots/tablet_songs_portrait.png" alt="Screenshot" width="300" height="600">
+<img src="screenshots/tablet_favorite_songs_landscape.png" alt="Screenshot" width="500" height="300">
+<img src="screenshots/tablet_favorite_songs_portrait.png" alt="Screenshot" width="300" height="600">
+<img src="screenshots/tablet_empty_screen_landscape.png" alt="Screenshot" width="500" height="300">
+<img src="screenshots/offline.png" alt="Screenshot" width="300" height="600">
 
 ## Features
 
