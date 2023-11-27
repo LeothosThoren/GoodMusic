@@ -18,7 +18,6 @@ It is also possible to put songs into favorite and to retrieve them.
 <img src="screenshots/tablet_albums_landscape.png" alt="Screenshot">
 <img src="screenshots/tablet_albums_portrait.png" alt="Screenshot">
 <img src="screenshots/tablet_songs_landscape.png" alt="Screenshot">
-<img src="screenshots/tablet_songs_landscape.png" alt="Screenshot">
 <img src="screenshots/tablet_songs_portrait.png" alt="Screenshot">
 <img src="screenshots/tablet_favorite_songs_landscape.png" alt="Screenshot">
 <img src="screenshots/tablet_favorite_songs_portrait.png" alt="Screenshot">
@@ -46,10 +45,10 @@ This app contains three screens:
 ### Architecture
 
 MVVM + Clean Architecture
-<img src="screenshots/architecture.png" alt="Screenshot">
-
 + dependency injection
   with [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+
+  <img src="screenshots/architecture.png" alt="Screenshot">
 
 ### Ui Test and unit test
 

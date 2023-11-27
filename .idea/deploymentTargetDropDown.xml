@@ -13,12 +13,12 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\nasta\.android\avd\Pixel_Fold_API_TiramisuPrivacySandbox.avd" />
+                  <value value="C:\Users\nasta\.android\avd\Medium_Tablet_API_21.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2023-11-27T09:29:04.647820Z" />
+          <timeTargetWasSelectedWithDropDown value="2023-11-27T09:57:17.634451600Z" />
         </State>
       </entry>
       <entry key="appState_isCompact()">
